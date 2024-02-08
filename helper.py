@@ -43,7 +43,7 @@ if args.folder_type == 2:
     move_re_order(digits_path, result_path, 0)
     move_re_order(letters_path, result_path, 10)
 elif args.folder_type == 3:
-    move_re_order(digits_path, result_path, 53)
+    move_re_order(digits_path, result_path, 43)
     move_re_order(letters_path, result_path, 0)
 
 print("data folder transformation complete")
