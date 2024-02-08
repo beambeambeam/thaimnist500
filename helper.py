@@ -1,4 +1,12 @@
-# help for data formation
+"""Helper function for data transformation
+    
+    type of folder allignment (as argument of --folder_type)
+    1. seperate digits, letters
+    2. all in one folder with digits then letters
+    3. all in one folder with letters then digits
+    ex. python helper.py --folder_type 1
+    return data folder for type 2,3
+"""
 
 import os
 import argparse
@@ -9,7 +17,7 @@ parser = argparse.ArgumentParser(description="Helper script for data formation")
 # 1. seperate digits, letters
 # 2. all in one folder with digits then letters
 # 3. all in one folder with letters then digits
-# generate parse for do it
+
 parser.add_argument(
     "--folder_type", type=int, help="type of folder alignment (1, 2, or 3)"
 )
@@ -25,7 +33,6 @@ if not os.path.exists(digits_path) or not os.path.exists(letters_path):
     exit()
 
 
-# def numeric_rename_folder(path, range):
 result_path = os.path.join(os.path.dirname(__file__), "./data")
 if not os.path.exists(result_path):
     os.mkdir(result_path)
@@ -43,7 +50,7 @@ if args.folder_type == 2:
     move_re_order(digits_path, result_path, 0)
     move_re_order(letters_path, result_path, 10)
 elif args.folder_type == 3:
-    move_re_order(digits_path, result_path, 43)
     move_re_order(letters_path, result_path, 0)
+    move_re_order(digits_path, result_path, 44)
 
 print("data folder transformation complete")
