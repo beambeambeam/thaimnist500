@@ -7,9 +7,10 @@ def extract_all_files(tar_file_path, extract_to):
         tar.extractall(extract_to)
 
 
+BASE_DIR = os.path.dirname(__file__)
 CATEGORIES = ["letters", "digits"]
-DATA = f"{os.path.dirname(__file__)}/data"
-TAR = [f"{os.path.dirname(__file__)}/{x}.tar" for x in CATEGORIES]
+DATA = f"{BASE_DIR}/data"
+TAR = [f"{BASE_DIR}/{x}.tar" for x in CATEGORIES]
 os.makedirs(DATA, exist_ok=True)
 
 CATEGORIES_DATA = [f"{DATA}/{x}" for x in CATEGORIES]
